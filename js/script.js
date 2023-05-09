@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     /* Jugadores */
     /* Orden de los datos: $id, $name, $alliance_id, $points, $rank, $towns */
     var urlplayers = 'https://es116.grepolis.com/data/players.txt';
