@@ -1,64 +1,38 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         GrepoSTool
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
 // @author       You
-// @match        http://*/*
-// @match        https://*/*
+// @description  try to take over the world!
+// @match        https://*.grepolis.com/game/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_xmlhttpRequest
+// @grant        GM_log
 // ==/UserScript==
+
+
+/*
+   Ejemplo a seguir: https://api.grepodata.com/script/indexer.js?v=467657
+   Página Grepo: https://api.grepodata.com/script/indexer.js?v=467657
+*/
+
 
 (function() {
     'use strict';
 
-    /* Jugadores */
-    /* Orden de los datos: $id, $name, $alliance_id, $points, $rank, $towns */
-    var urlplayers = 'https://es116.grepolis.com/data/players.txt';
+    console.log('Inicio Script GrepoSTool');
 
-    GM_xmlhttpRequest({
-        method: 'GET',
-        url: urlplayers,
-        onload: function(response) {
-            var datos = response.responseText.split('\n').map(function(linea) {
-                return linea.split(',');
-            });
-
-            console.log(datos);
-        }
-    });
-
-    /* Combate: */
-    /* Orden de los datos: $rank, $player_id, $points */
-    var urlcombate = 'http://EsX.grepolis.com/data/player_kills_all.txt';
-
-
-    /* Ataque: */
-    /* Orden de los datos: $rank, $player_id, $points */
-    var urlataque = 'http://EsX.grepolis.com/data/player_kills_att.txt';
-
-
-    /* Defensa: */
-    /* Orden de los datos: $rank, $player_id, $points */
-    var urldefensa = 'http://EsX.grepolis.com/data/player_kills_def.txt';
-
-
-    /* Clasificacion Alianzas */
-    /* Orden de los datos: $id, $name, $points, $villages, $members, $rank */
-    var urlclasificacion = 'http://EsX.grepolis.com/data/alliances.txt';
-
-    /* Alianzas Combate */
-    /* Orden de los datos: $rank, alliance_id, $points */
-    var urlacombate = 'http://EsX.grepolis.com/data/alliance_kills_all.txt';
-
-    /* Alianzas Ataque */
-    /* Orden de los datos: $rank, alliance_id, $points */
-    var urlaataque = 'http://EsX.grepolis.com/data/alliance_kills_att.txt';
-
-    /* Alianzas Defensa */
-    /* Orden de los datos: $rank, alliance_id, $points */
-    var urladefensa = 'http://EsX.grepolis.com/data/alliance_kills_def.txt';
-
+    var CustomStyleJS = document.createElement('script');
+    CustomStyleJS.type = 'text/javascript';
+    CustomStyleJS.src = 'https://raw.githubusercontent.com/aaltzi/GrepoSTool/main/js/script.js';
+    document.getElementsByTagName("head")[0].appendChild(CustomStyleJS);
+    /*
+    var CustomStyleCSS = document.createElement('link');
+    CustomStyleCSS.rel = 'stylesheet';
+    CustomStyleCSS.type = 'text/css';
+    CustomStyleCSS.href = 'https://api.grepodata.com/script/indexer.css?v=' + rand;
+    document.getElementsByTagName("head")[0].appendChild(CustomStyleCSS);
+    */
+    console.log("Añadido Script GrepoSTool en Tamper/GreaseMonkey");
 
 })();
