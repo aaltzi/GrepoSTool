@@ -24,7 +24,8 @@
 
     var CustomStyleJS = document.createElement('script');
     CustomStyleJS.type = 'text/javascript';
-    CustomStyleJS.src = 'https://raw.githubusercontent.com/aaltzi/GrepoSTool/main/js/script.js';
+    /*CustomStyleJS.src = 'https://raw.githubusercontent.com/aaltzi/GrepoSTool/main/js/script.js';*/
+    CustomStyleJS.src = 'http://grepostool.epizy.com/js/script.js';
     document.getElementsByTagName("head")[0].appendChild(CustomStyleJS);
     /*
     var CustomStyleCSS = document.createElement('link');
