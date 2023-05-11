@@ -2,6 +2,7 @@ console.log("Siii :D");
 (function() { try {
     
     // Ensure jquery
+    /*
     if (window.jQuery) {
     } else {
         var script = document.createElement('script');
@@ -9,7 +10,7 @@ console.log("Siii :D");
         script.type = 'text/javascript';
         document.getElementsByTagName('head')[0].appendChild(script);
     }
-    
+    */
     
     /* Jugadores */
     /* Orden de los datos: $id, $name, $alliance_id, $points, $rank, $towns */
