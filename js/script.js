@@ -15,7 +15,7 @@ console.log("Siii :D");
     /* Jugadores */
     /* Orden de los datos: $id, $name, $alliance_id, $points, $rank, $towns */
     var urlplayers = 'https://es116.grepolis.com/data/players.txt';
-
+    /*
     GM_xmlhttpRequest({
         method: 'GET',
         url: urlplayers,
@@ -27,6 +27,7 @@ console.log("Siii :D");
             /* console.log(datos); */
         }
     });
+    */
 
     /* Combate: */
     /* Orden de los datos: $rank, $player_id, $points */
